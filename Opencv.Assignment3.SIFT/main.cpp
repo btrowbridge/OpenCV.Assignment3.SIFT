@@ -23,6 +23,7 @@ void RunMySiftDetector(const Mat input, vector<KeyPoint>& keypoints, Mat& descri
 Mat rotateImage(const Mat src, float angle);
 string filePrompt();
 
+
 int main(int argc, const char* argv[])
 {
 	string filename = filePrompt();
@@ -130,7 +131,13 @@ void RunMySiftDetector(const Mat input, vector<KeyPoint>& keypoints, Mat& descri
 	//siftcpu->compute(input, keypoints, descriptors);
 }
 
-Mat rotateImage(const Mat src, float angle) 
+/// <summary>
+/// Rotates the image.
+/// </summary>
+/// <param name="src">The source.</param>
+/// <param name="angle">The angle.</param>
+/// <returns></returns>
+Mat rotateImage(const Mat src, float angle)
 {
 	Mat dest;
 	cv::Point2f center(src.cols / 2.0f, src.rows / 2.0f);
@@ -144,6 +151,10 @@ Mat rotateImage(const Mat src, float angle)
 	return dest;
 }
 
+/// <summary>
+/// The file prompt.
+/// </summary>
+/// <returns></returns>
 string filePrompt() {
 	char filename[MAX_PATH];
 
